@@ -1,0 +1,74 @@
+body {
+  font-family: "Orbitron", sans-serif;
+  background: radial-gradient(circle at center, #000010 0%, #000 100%);
+  color: #feda4a;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-top: 60px;
+  height: 100vh;
+  overflow: hidden;
+}
+
+h1 {
+  font-size: 2.5em;
+  text-shadow: 0 0 15px #feda4a;
+  margin-bottom: 40px;
+}
+
+.feature-card-container {
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.feature-card {
+  background: rgba(20, 20, 20, 0.7);
+  padding: 20px 30px;
+  border: 2px solid #feda4a;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(255, 230, 120, 0.3);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: 0.3s ease-in-out;
+}
+
+.feature-card:hover {
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 25px #feda4a;
+}
+
+/* Checkbox Styling */
+.feature-card input[type="checkbox"] {
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border: 3px solid #feda4a;
+  border-radius: 6px;
+  background-color: black;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+/* Checked State */
+.feature-card input[type="checkbox"]:checked {
+  background-color: #0ff;
+  border-color: #00ffff;
+  box-shadow: 0 0 15px #00ffff, inset 0 0 10px #00ffff;
+}
+
+.feature-card input[type="checkbox"]:checked::after {
+  content: "✓";
+  color: #000;
+  font-weight: bold;
+  font-size: 18px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -60%);
+}
