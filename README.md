@@ -1,4 +1,5 @@
-```# 🌌 Star Wars Feature Selection Page
+```
+# 🌌 Star Wars Feature Selection Page
 
 A visually immersive **Star Wars–themed feature selector** built using **HTML, CSS, and JavaScript**.  
 This project reimagines a simple feature selection interface as a galactic control panel complete with glowing neon checkboxes, background music, and lightsaber sound effects.
