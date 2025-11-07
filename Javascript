@@ -1,0 +1,66 @@
+// Star Wars background music & effects
+const bgMusic = document.getElementById("bg-music");
+const saberOn = document.getElementById("saber-on");
+const saberOff = document.getElementById("saber-off");
+
+bgMusic.volume = 0.1;
+
+// Start music on first user interaction (to comply with browser autoplay policy)
+document.body.addEventListener(
+  "click",
+  () => {
+    if (bgMusic.paused) {
+      bgMusic.play();
+    }
+  },
+  { once: true }
+);
+
+// Checkbox sound effects
+const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+
+checkboxes.forEach((box) => {
+  box.addEventListener("change", () => {
+    if (box.checked) {
+      saberOn.currentTime = 0;
+      saberOn.play();
+    } else {
+      saberOff.currentTime = 0;
+      saberOff.play();
+    }
+  });
+});
+
+// Optional: Starry background animation
+const stars = document.createElement("div");
+stars.style.position = "fixed";
+stars.style.top = "0";
+stars.style.left = "0";
+stars.style.width = "100%";
+stars.style.height = "100%";
+stars.style.zIndex = "-1";
+stars.style.overflow = "hidden";
+document.body.appendChild(stars);
+
+for (let i = 0; i < 150; i++) {
+  const star = document.createElement("div");
+  star.style.position = "absolute";
+  star.style.width = "2px";
+  star.style.height = "2px";
+  star.style.background = "white";
+  star.style.top = Math.random() * 100 + "%";
+  star.style.left = Math.random() * 100 + "%";
+  star.style.opacity = Math.random();
+  star.style.animation = `twinkle ${
+    1 + Math.random() * 2
+  }s infinite ease-in-out`;
+  stars.appendChild(star);
+}
+
+const style = document.createElement("style");
+style.textContent = `
+@keyframes twinkle {
+  0%, 100% { opacity: 0.2; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.3); }
+}`;
+document.head.appendChild(style);
