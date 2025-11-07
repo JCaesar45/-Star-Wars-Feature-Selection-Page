@@ -1,0 +1,45 @@
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feature Selection Page</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <h1>Feature Selection</h1>
+
+  <div class="feature-card-container">
+    <label class="feature-card">
+      <input type="checkbox" id="forceMode">
+      Force Mode
+    </label>
+
+    <label class="feature-card">
+      <input type="checkbox" id="lightsaberSound">
+      Lightsaber Sound
+    </label>
+
+    <label class="feature-card">
+      <input type="checkbox" id="hyperdrive">
+      Hyperdrive
+    </label>
+  </div>
+
+  <audio id="bg-music" loop>
+    <source src="https://jetta.vgmtreasurechest.com/soundtracks/super-star-wars-snes/vhyywodz/06%20Star%20Wars%20Main%20Theme.mp3" type="audio/mpeg">
+  </audio>
+
+  <audio id="saber-on">
+    <source src="https://www.myinstants.com/media/sounds/lightsaber_02.mp3">
+  </audio>
+
+  <audio id="saber-off">
+    <source src="https://www.myinstants.com/media/sounds/lightsaber-off.mp3" type="audio/mpeg">
+  </audio>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
